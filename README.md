@@ -63,3 +63,7 @@ The inventory system implements full left-click and right-click item manipulatio
 ### Physics & Input — `PhysicsEngine.cpp` / `PlayerController.cpp`
 
 Physics engines use a static registry pattern — each entity's physics component registers itself on construction, and a single `updateWorldPhysics()` call ticks all registered engines at a fixed timestep with gravity and axis-aligned block collision. Input flows through a clean abstraction chain: `GLFW → InputManager` (raw key/mouse state with press-vs-hold detection) `→ PlayerInput` (semantic action polling) `→ PlayerController` (game logic application), keeping raw input handling f
+
+## Tech
+
+C++17, OpenGL 3.3, GLFW, GLAD, GLM, ImGui, stb_image, FastNoiseLite
