@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build OpenGL",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-g",     
+                "src/main.cpp",
+                "src/glad.c",
+                "src/shaderClass.cpp",       // Was Shader.cpp
+                "src/Texture.cpp",
+                "src/Camera.cpp",
+                "src/World.cpp",
+                "src/GUIManager.cpp",
+                "src/VAO.cpp",
+                "src/VBO.cpp",
+                "src/EBO.cpp",
+                "src/Chunk.cpp",
+                "src/Mesh.cpp",
+                "src/BlockInteraction.cpp",
+                "src/stb.cpp",
+                "-I${workspaceFolder}/include",
+                "-I${workspaceFolder}/HeaderFiles",  // Add this so .cpp files find .h files
+                "-Llib",
+                "-lglfw3",
+                "-lopengl32",
+                "-lgdi32",
+                "-o",
+                "bin/game.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
